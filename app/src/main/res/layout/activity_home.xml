@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <!--    tao thanh head-->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@drawable/home_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp"
+                        android:background="@drawable/home_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/toolbar_menu">
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textViewacc"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Bạn chưa đăng nhập"-->
+<!--                            app:layout_constraintBottom_toBottomOf="@+id/vietnam_api"-->
+<!--                            app:layout_constraintEnd_toStartOf="@+id/vietnam_api"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="@+id/vietnam_api" />-->
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView"
+                            android:layout_width="170dp"
+                            android:layout_height="111dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            app:layout_constraintEnd_toStartOf="@+id/cardView2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/vietnam_api">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/lout_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView3"
+                                    android:layout_width="49dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/confirm_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="sans-serif"
+                                    android:text="Ca Nhiễm"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="15sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="0"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@+id/imageView3"
+                                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="87dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/mainline" />
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="người"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/textView3"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView3"
+                                    app:layout_constraintVertical_bias="0.0" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView2"
+                            android:layout_width="170dp"
+                            android:layout_height="111dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.448"
+                            app:layout_constraintStart_toEndOf="@+id/cardView"
+                            app:layout_constraintTop_toBottomOf="@+id/vietnam_api">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="49dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/death_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="sans-serif"
+                                    android:text="Tử Vong"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="15sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+                                <ImageView
+                                    android:id="@+id/imageView8"
+                                    android:layout_width="87dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/mainline" />
+
+                                <TextView
+                                    android:id="@+id/textView9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="0"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+                                <TextView
+                                    android:id="@+id/textView10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="người"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                                    app:layout_constraintVertical_bias="0.0" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView3"
+                            android:layout_width="170dp"
+                            android:layout_height="111dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/cardView4"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView9"
+                                    android:layout_width="49dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/new_cases_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="sans-serif"
+                                    android:text="Đang Điều Trị"
+                                    android:textColor="#1E2432"
+                                    android:textSize="15sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView9"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+                                <TextView
+                                    android:id="@+id/textView12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="0"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@+id/imageView9"
+                                    app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+                                <TextView
+                                    android:id="@+id/textView13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="người"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/textView12"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView12"
+                                    app:layout_constraintVertical_bias="0.0" />
+
+                                <ImageView
+                                    android:id="@+id/imageView10"
+                                    android:layout_width="87dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/mainline" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView4"
+                            android:layout_width="170dp"
+                            android:layout_height="111dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintEnd_toStartOf="@+id/cardView3"
+                            app:layout_constraintHorizontal_bias="0.551"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView11"
+                                    android:layout_width="49dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/recovered_icon" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="sans-serif"
+                                    android:text="Hồi Phục"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="15sp"
+                                    app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView11"
+                                    app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+                                <TextView
+                                    android:id="@+id/textView15"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:text="0"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@+id/imageView11"
+                                    app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+                                <TextView
+                                    android:id="@+id/textView16"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="người"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="@+id/textView15"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView15"
+                                    app:layout_constraintVertical_bias="0.0" />
+
+                                <ImageView
+                                    android:id="@+id/imageView12"
+                                    android:layout_width="87dp"
+                                    android:layout_height="46dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:srcCompat="@drawable/mainline" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <Button
+                            android:id="@+id/vietnam_api"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+
+                            android:layout_marginEnd="5dp"
+                            android:text="Việt Nam"
+                            android:textColor="@color/bar_green"
+                            app:backgroundTint="@android:color/white"
+                            app:cornerRadius="20dp"
+                            app:layout_constraintEnd_toStartOf="@+id/thegioi_api"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:rippleColor="#FFFFFF"
+                            app:strokeColor="@color/bar_green"
+                            app:strokeWidth="2dp" />
+
+                        <Button
+
+                            android:id="@+id/thegioi_api"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:text="Thế Giới"
+                            android:textColor="@color/bar_green"
+                            app:backgroundTint="@android:color/white"
+                            app:cornerRadius="20dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/vietnam_api"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                            app:layout_constraintTop_toTopOf="@+id/vietnam_api"
+                            app:rippleColor="#FFFFFF"
+                            app:strokeColor="@color/bar_green"
+                            app:strokeWidth="2dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Phòng Ngừa"
+                        android:textColor="@color/text_color"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView17"
+                        app:srcCompat="@drawable/hand_wash" />
+
+                    <ImageView
+                        android:id="@+id/imageView14"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView15"
+                        app:layout_constraintStart_toEndOf="@+id/imageView13"
+                        app:layout_constraintTop_toTopOf="@+id/imageView13"
+                        app:srcCompat="@drawable/use_mask" />
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginEnd="36dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView14"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/clean" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Rửa tay "
+                        android:textColor="@color/green_2"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                        app:layout_constraintHorizontal_bias="0.512"
+                        app:layout_constraintStart_toStartOf="@+id/imageView13"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Đeo khẩu trang"
+                        android:textColor="@color/green_2"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+                        app:layout_constraintHorizontal_bias="0.544"
+                        app:layout_constraintStart_toStartOf="@+id/imageView14"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Làm sạch"
+                        android:textColor="@color/green_2"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+                        app:layout_constraintStart_toStartOf="@+id/imageView15"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+                    <Button
+                        android:id="@+id/buttonsuckhoe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="13dp"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:text="Xem chi tiết"
+                        android:textColor="@color/text_color"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="380dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@string/agc_039385256A8E064A3FBA0E5DC382B8F03961789D7A12A9D0BB248FFEDD6D1470"
+                        android:onClick="onClick"
+                        android:scaleType="fitXY"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView19"
+                        app:srcCompat="@drawable/home_banner_bottom"
+                        tools:ignore="OnClick" />
+
+                    <Button
+                        android:id="@+id/buttonyte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/borderradius"
+                        android:text="Xem thêm tin tức về y tế"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--        Tao menu-->
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="350px"
+            android:layout_marginStart="350px"
+            android:contentDescription="@string/agc_039385256A8E064A3FBA0E5DC382B8F03961789D7A12A9D0BB248FFEDD6D1470"
+            android:maxWidth="5dp"
+            android:maxHeight="205dp"
+            android:minWidth="5dp"
+            android:minHeight="205dp"
+            android:textAlignment="center"
+            android:textDirection="firstStrongRtl"
+            android:visibility="visible" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/header_menu"
+            app:menu="@menu/main_menu">
+            <!--                <ListView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:id="@+id/listview_menu">-->
+
+            <!--                </ListView>-->
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</LinearLayout>
